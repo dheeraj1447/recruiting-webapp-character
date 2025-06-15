@@ -1,4 +1,4 @@
-import type { Attributes, Class } from "./types";
+import type { Attributes, Class, SkillState } from "./types";
 
 export const ATTRIBUTE_LIST = [
     'Strength',
@@ -36,7 +36,7 @@ export const CLASS_LIST: Record<Class, Attributes> = {
     },
 }
 
-export const SKILL_LIST = [
+export const SKILL_LIST: Omit<SkillState, 'value'>[] = [
     { name: 'Acrobatics', attributeModifier: 'Dexterity' },
     { name: 'Animal Handling', attributeModifier: 'Wisdom' },
     { name: 'Arcana', attributeModifier: 'Intelligence' },
@@ -57,3 +57,6 @@ export const SKILL_LIST = [
     { name: 'Survival', attributeModifier: 'Wisdom' },
 
 ]
+
+export const MODIFIER_THRESHOLD = 10
+export const CHARACTER_VALUE_THRESHOLD = 70
